@@ -1,0 +1,35 @@
+
+<section class="content-header">
+  <h1>
+   {{PageHeader}}
+  </h1>
+</section>
+<div class="row">
+<div class="col-xs-12">
+ <div class="box">
+   <div class="box-body">
+       <div class="row">
+       	 <div class="col-sm-4">
+       	 	Project Title
+       	 	<input type="text" class="form-control" ng-model="project.ProjectTitle"></input>
+       	 </div>
+       	  <div class="col-sm-6">
+       	 	Project Discription
+       	 	<input type="text" class="form-control" ng-model="project.ProjectDescription"></input>
+       	 </div>
+       </div>
+       <div class="row">
+       	<div class="col-sm-1">
+       		<br />
+       		<input type="button" ng-click="saveproject()" class="btn btn-primary" value="{{btntext}}"></input>
+       	</div>
+       	<div class="col-sm-1">
+       		<br />
+       		<input type="button" ng-click="cancelproject()" class="btn btn-primary" value="Cancel"></input>
+       	</div>
+       </div>
+              
+   </div>
+ </div>
+</div>
+</div>

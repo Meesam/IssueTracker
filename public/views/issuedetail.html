@@ -1,0 +1,91 @@
+ <script type="text/javascript">
+     $(function () {
+        $('#startdate').datetimepicker();
+         $('#enddate').datetimepicker();
+    });
+</script>
+<section class="content-header">
+  <h1>
+   {{PageHeader}}
+  </h1>
+</section>
+<div class="row">
+<div class="col-xs-12">
+ <div class="box">
+   <div class="box-body">
+       <div class="row">
+         <div class="col-sm-8">
+          Project 
+          <br /><select class="form-control" ng-model="issue.ProjectId" ng-options="p.ProjectId as p.ProjectTitle for p in projectlist"></select><br />
+         </div>
+         </div>
+       <div class="row">
+       	
+         <div class="col-sm-4">
+       	 	Issue Title
+       	 	<input type="text" class="form-control" ng-model="project.ProjectTitle"></input><br />
+       	 </div>
+       	  <div class="col-sm-4">
+       	 	Issue Type
+       	 	<select class="form-control" ng-model="issue.IssueTypeID" ng-options="i.TypeID as i.TypeName for i in issutypelist"></select><br />
+       	 </div>
+       </div>
+        <div class="row">
+         <div class="col-sm-4">
+          Issue Priority
+          <select class="form-control" ng-option=""></select><br />
+         </div>
+          <div class="col-sm-4">
+          Serverity
+          <select class="form-control" ng-option=""></select><br />
+         </div>
+       </div>
+       <div class="row">
+         <div class="col-sm-4">
+          Start Date
+          <div class="form-group">
+                <div class='input-group date' id='startdate'>
+                    <input type='text' class="form-control" />
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </div>
+            </div><br />
+         </div>
+          <div class="col-sm-4">
+          End Date
+         <div class="form-group">
+                <div class='input-group date' id='enddate'>
+                    <input type='text' class="form-control" />
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </div>
+            </div><br />
+         </div>
+       </div>
+        <div class="row">
+         <div class="col-sm-8">
+          Description
+          <input type="text" class="form-control" ng-model="project.ProjectTitle"></input><br />
+         </div>
+         
+       </div>
+
+       <div class="row">
+       	<div class="col-sm-1">
+       		<br />
+       		<input type="button" ng-click="saveIssue()" class="btn btn-primary" value="{{btntext}}"></input>
+       	</div>
+       	<div class="col-sm-1">
+       		<br />
+       		<input type="button" ng-click="cancelissue()" class="btn btn-primary" value="Cancel"></input>
+       	</div>
+       </div>
+              
+   </div>
+ </div>
+</div>
+</div>
+
+ 

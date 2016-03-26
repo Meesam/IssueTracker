@@ -1,0 +1,50 @@
+
+<section class="content-header">
+  <h1>
+   {{PageHeader}}
+  </h1>
+</section>
+
+<div class="row">
+            <div class="col-xs-12">
+              <div class="box">
+                <div class="box-header">
+                <input type="button" ng-click="addNew()" class="btn btn-primary" value="Add New"></input>
+
+                  <div class="box-tools">
+                    <div class="input-group" style="width: 150px;">
+                      <input type="text" name="table_search" class="form-control input-sm pull-right" placeholder="Search">
+                      <div class="input-group-btn">
+                        <button class="btn btn-sm btn-default"><i class="fa fa-search"></i></button>
+                      </div>
+                    </div>
+                  </div>
+                </div><!-- /.box-header -->
+                <div class="box-body table-responsive no-padding">
+                  <table class="table table-hover">
+                    <tr>
+                      <th>Project</th>
+                      <th>Issue Title</th>
+                      <th>Issue Type</th>
+                      <th>Priority</th>
+                      <th>Serverity</th>
+                      <th>Start Date</th>
+                      <th>End Date</th>
+                      <th>Status</th>
+                    </tr>
+                    <tr ng-repeat="issue in IssuesTable.Rows" ng-click="Showdetail(issue.IssueId)">
+                      <td>{{issue.ProjectTitle}}</td>
+                      <td>{{issue.IssueTitle}}</td>
+                      <td>{{issue.IssueType}}</td>
+                      <td>{{issue.IssuePriority}}</td>
+                      <td>{{issue.Serveity}}</td>
+                      <td>{{issue.StartDate | date:'MMM d, y'}}</td>
+                      <td>{{issue.EndDate}}</td>
+                      <td>{{issue.Status}}</td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+              </div>
+              </div>
+              

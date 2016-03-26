@@ -1,0 +1,44 @@
+
+<section class="content-header">
+  <h1>
+   {{PageHeader}}
+  </h1>
+</section>
+
+<div class="row">
+            <div class="col-xs-12">
+              <div class="box">
+                <div class="box-header">
+                <input type="button" ng-click="addnew()" class="btn btn-primary" value="Add New"></input>
+
+                  <div class="box-tools">
+                    <div class="input-group" style="width: 150px;">
+                      <input type="text" name="table_search" class="form-control input-sm pull-right" placeholder="Search">
+                      <div class="input-group-btn">
+                        <button class="btn btn-sm btn-default"><i class="fa fa-search"></i></button>
+                      </div>
+                    </div>
+                  </div>
+                </div><!-- /.box-header -->
+                <div class="box-body table-responsive no-padding">
+                  <table class="table table-hover">
+                    <tr>
+                      <th>ID</th>
+                      <th>Title</th>
+                      <th>Created At</th>
+                      <th>Created By</th>
+                      <th>Description</th>
+                    </tr>
+                    <tr ng-repeat="p in ProjecTable.Rows" ng-click="Showdetail(p.ProjectId)">
+                      <td>{{p.ProjectId}}</td>
+                      <td>{{p.ProjectTitle}}</td>
+                      <td>{{p.CreateDate | date:'MMM d, y'}}</td>
+                      <td>{{p.CreatedBy}}</td>
+                      <td>{{p.ProjectDescription}}</td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+              </div>
+              </div>
+              
