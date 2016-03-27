@@ -11,6 +11,10 @@
     "tracker"
   ],
   "author": "meesam",
+  "repository": {
+  "type": "git",
+  "url": "https://github.com/Meesam/IssueTracker"
+},
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.15.0",
