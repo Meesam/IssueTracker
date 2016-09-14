@@ -2,6 +2,8 @@ var express=require('express');
 var projects=require('../controllers/projectmodule/projects');
 var apiRoutes = express.Router();
 
+
+// Get all project list
 apiRoutes.get('/project',function (req,resp,next) {
 	projects.getAllPoject(function(data,err){
 		if(err)
