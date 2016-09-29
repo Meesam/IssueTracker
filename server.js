@@ -50,6 +50,7 @@ app.route('/*').get(function(req, res) {
     return res.sendFile(path.join(__dirname+'/public/index.html')); 
 });
 
+// this is for run  server on localhost
 
 app.listen(appconfig.webPort,function() {
    console.log('server runing at ' + appconfig.webPort);
