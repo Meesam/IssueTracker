@@ -1,4 +1,5 @@
 var express=require('express');
+var db=require('../core/db');
 var appModule=require('../controllers/appmodule/appmenu');
 var apiRoutes = express.Router();
 

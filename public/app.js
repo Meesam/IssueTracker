@@ -20,10 +20,11 @@ issueTrackerApp.config(function ($routeProvider, $controllerProvider, $locationP
         .when('/login', getRoute('login'))
         .when('/myprofile', getRoute('userprofile'))
         .when('/dashboard', getRoute('dashboard'))
-        .when('/project', getRoute('project'))
+        .when('/projects', getRoute('projects'))
         .when('/issues', getRoute('issues'))
         .when('/issuetype', getRoute('issuetype'))
         .when('/status', getRoute('status'))
+        .when('/users', getRoute('userprofile'))
         .when('/projects/:ID',getRoute('projectdetail'))
         .when('/issue/:ID',getRoute('issuedetail'))
         .otherwise({ redirectTo: '/notfound' });
@@ -35,7 +36,7 @@ issueTrackerApp.controller('mainCtrl', mainCtrl);
 issueTrackerApp.run(function ($rootScope, $location, $cookies, appServices) {
     var token = $cookies.get('UserToken');
     if (token) $rootScope.token = token;
-    console.log(token);
+    console.log('token is '  + token);
     $rootScope.$on("$routeChangeStart", function (event, next, current) {
         $rootScope.attParam = null;
         if (!navigator.onLine) $rootScope.setMsg('Network not connected! Please check internet connection.');
@@ -87,7 +88,7 @@ function mainCtrl($scope, $location, $rootScope, $cookies, notify, $http, appSer
 
     $scope.isMenu=false;
     $scope.getModuleMenu=function(id){
-      appServices.doActionGet({ Token: $rootScope.token }, 'modulemenu/'+ id + '').then(function (d) {
+      appServices.doActionGet({ Token: $rootScope.token }, 'modules/'+ id + '').then(function (d) {
             if (d.Status == 'success'){
               $scope.isMenu=true;
               $scope.moduleMenu = d.objdata;

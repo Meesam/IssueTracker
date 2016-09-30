@@ -11,7 +11,6 @@ var projectapi=require('./api/projectapi');
 var cookieparser=require('cookie-parser');
 var jwt = require('jwt-simple');
 
-
 // app configuration
 var app=express();
 var apiRoutes = express.Router();
@@ -50,8 +49,9 @@ app.route('/*').get(function(req, res) {
     return res.sendFile(path.join(__dirname+'/public/index.html')); 
 });
 
-// this is for run  server on localhost
 
+
+// this is for run  server on localhost
 app.listen(appconfig.webPort,function() {
    console.log('server runing at ' + appconfig.webPort);
 });

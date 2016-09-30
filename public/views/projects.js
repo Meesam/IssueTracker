@@ -1,5 +1,5 @@
-issueTrackerApp.registerCtrl('projectcontroller',
- function projectcontroller($scope, $rootScope, $http, $location, appServices, $cookies,validationService) {
+issueTrackerApp.registerCtrl('projectscontroller',
+ function projectscontroller($scope, $rootScope, $http, $location, appServices, $cookies,validationService) {
     $scope.PageHeader="Projects";
      $scope.getProject = function () {
         appServices.getTable($scope.ProjecTable).then(function (d) {

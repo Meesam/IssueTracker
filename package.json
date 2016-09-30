@@ -12,9 +12,9 @@
   ],
   "author": "meesam",
   "repository": {
-  "type": "git",
-  "url": "https://github.com/Meesam/IssueTracker"
-},
+    "type": "git",
+    "url": "https://github.com/Meesam/IssueTracker"
+  },
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.15.0",
@@ -23,6 +23,8 @@
     "express": "^4.13.4",
     "jsonwebtoken": "^5.7.0",
     "jwt-simple": "^0.5.0",
+    "mongodb": "^2.2.10",
+    "mongoose": "^4.6.1",
     "mssql": "^3.1.2"
   }
 }

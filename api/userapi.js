@@ -1,4 +1,5 @@
 var express=require('express');
+var db=require('../core/db');
 var usersModule=require('../controllers/userModule/users');
 var apiRoutes = express.Router();
 
@@ -21,8 +22,8 @@ apiRoutes.post('/login',function(req,resp,next){
 
 apiRoutes.get('/userfromtoken',function(req,resp,next){
   var token =req.cookies;
-  if(token){
-     usersModule.getUseryEmail(token,function(data,err){
+  if(token.UserToken){
+     usersModule.getUserByEmail(token.UserToken,function(data,err){
        if(err)
          return next(err);
        else{

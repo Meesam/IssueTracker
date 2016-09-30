@@ -1,9 +1,8 @@
 issueTrackerApp.registerCtrl('logincontroller', function logincontroller($scope, $rootScope, $http, $location, appServices, $cookies,validationService) {
   $scope.loginInfo = { Email: '', Password: '' }; 
    $scope.doLogin = function () {  
-        if ($scope.loginInfo.Email == '') { $rootScope.setMsg('Email Address is required'); return }
+        if ($scope.loginInfo.UserName == '') { $rootScope.setMsg('UserName is required'); return }
         else if ($scope.loginInfo.Password == '') { $rootScope.setMsg('Password is required'); return }
-        else if (!validationService.Email($scope.loginInfo.Email)) { $rootScope.setMsg('Invalid Email Address'); return }
         appServices.doLogin($scope.loginInfo).then(function (d) {
             if (d.Status == 'success') { // Login Success
                 $rootScope.mUser = d.objdata;

@@ -1,84 +1,106 @@
-var db=require('../../core/db');
+// Open db comment when use sql server
+//var db=require('../../core/db');
 var appconfig=require('../../appconfig');
 var globalobj=require('../../core/global');
 var util=require('util');
-var jwt = require('jwt-simple');
+var mongoose=require('mongoose');
+var Users = mongoose.model('Users');
+
+/*
+var Schema=mongoose.Schema;
+mongoose.connect(appconfig.dbUrl);
+var db=mongoose.connection;
+db.on("error", console.error.bind(console, "connection error"));
+db.once("open", function(callback) {
+	console.log("Connection succeeded.");
+});
+*/
 
 
 
-exports.doLogin=function(users,callback) {
-	if(users){
-		var sql='Select * from Users Where Email=';
-		sql +=util.format("'%s'",users.Email);
-		sql +='and Password=';
-		sql +=util.format("'%s'",users.Password);
-		db.runSql(sql,function(data,err){
-			if(err){
-				callback(null,err);
-			}
+// Add User
+exports.createUsers=function(users,callback){
+  if(users){
+	  var user=new Users({
+		  FirstName:users.FirstName,
+		  MiddleName:users.MiddleName,
+		  LastName:users.LastName,
+		  UserName:users.UserName,
+		  Password:users.Password,
+		  Email:users.Email,
+		  DOB:users.DOB,
+		  LastLogin:users.LastLogin
+	  });
+	  user.save(function(err){
+		  if(err)
+			  callback(null,err);
+		  else {
+			  var obj={
+				  status:'success',
+				  count:data.length,
+				  data:data
+			  }
+			  callback(globalobj.globalObject(obj));
+		  }
+	  });
+   }
+
+};
+
+// Login
+exports.doLogin=function(users,callback){
+	if(users != null){
+	  Users.find({usersName:users.usersName,Password:users.Password},function(err,data){
+		 if(err)
+		  callback(null,err);
+		  else{
+			 var obj={
+				 status:'success',
+				 count:data.length,
+				 data:data,
+				 tokenvalue:data[0].Email
+			 }
+			 callback(globalobj.globalObject(obj));
+		 }
+	  });
+  }
+
+};
+
+
+// Get User by Email
+exports.getUserByEmail=function(emailid,callback){
+	if(emailid != null){
+		Users.find({Email:emailid},function(err,data){
+           if(err)
+		    callback(null,err);
 			else{
-		        /*var token = jwt.encode({
-                	email:data.Email,
-                	name:data.FirstName,
-                	exp:14000
-                }, appconfig.secretkey);*/
-              
-              if(data.length > 0){
-				var obj={
-					status:'success',
-					count:data.length,
-					data:data,
-					tokenvalue:data[0].Email
-				}
-				callback(globalobj.globalObject(obj));
-			}
-			else{
-				var obj={
-					status:'loginfail',
-					count:data.length,
-					data:null,
-					tokenvalue:null
-				}
-				callback(globalobj.globalObject(obj));
-			}	
-		}
-	});
-}
-	else{
-		callback(null,'input is not valid');
+			   var obj={
+				   status:'success',
+				   count:data.length,
+				   data:data
+			   }
+			   callback(globalobj.globalObject(obj));
+		   }
+		});
 	}
+
 };
 
+// Get All Users
 exports.getAllUsers=function(callback){
-	db.runSql('Select * from Users',function(data,err){
-		if(err){
-			callback(null,err);
-		}
+    Users.find({},function(err,data){
+		if(err)
+		 callback(null,err);
 		else{
-            var obj={
-					status:'success',
-					count:data.length,
-					data:data
-				}
+			var obj={
+				status:'success',
+				count:data.length,
+				data:data
+			}
 			callback(globalobj.globalObject(obj));
 		}
 	});
+
 };
 
-exports.getUseryEmail=function(emailid,callback){
-	var sqlquery="Select * from Users Where Email=";
-	sqlquery +=util.format("'%s'",emailid.UserToken);
-	db.runSql(sqlquery,function(data,err){
-		if(err){
-			callback(null,err);
-		}
-		else{
-            var obj={
-					status:'success',
-					count:data.length,
-					data:data
-				}
-			callback(globalobj.globalObject(obj));
-		}
-	});
-};

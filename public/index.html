@@ -167,7 +167,7 @@
                   <!-- Menu Footer-->
                   <li class="user-footer">
                     <div class="pull-left">
-                      <a href="#" class="btn btn-default btn-flat">Profile</a>
+                      <a href="/myprofile" class="btn btn-default btn-flat">Profile</a>
                     </div>
                     <div class="pull-right">
                       <a href="#" ng-click="signout()" class="btn btn-default btn-flat">Sign out</a>
@@ -213,10 +213,8 @@
           <!-- Sidebar Menu -->
           <ul class="sidebar-menu">
             <li ng-repeat="m in mainModule" class="treeview">
-              <a href="#" ng-click="getModuleMenu(m.ModuleId)"><i class="fa fa-link"></i> <span>{{m.ModuleName}}</span> <i class="fa fa-angle-left pull-right"></i></a>
-              <ul ng-repeat="mm in moduleMenu" class="treeview-menu">
-                <li><a ng-href="{{mm.Route}}">{{mm.MenuName}}</a></li>
-              </ul>
+              <a ng-href="{{m.MenuRoute}}"><i class="fa fa-link"></i> <span>{{m.MenuName}}</span> <i class="fa fa-angle-left pull-right"></i></a>
+
             </li>
           </ul><!-- /.sidebar-menu -->
         </section>
