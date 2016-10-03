@@ -5,8 +5,8 @@ var apiRoutes = express.Router();
 
 
 // Get all project list
-apiRoutes.get('/project',function (req,resp,next) {
-	projects.getAllProject(function(data,err){
+apiRoutes.post('/project',function (req,resp,next) {
+	projects.getAllProject(req.body,function(data,err){
 		if(err)
 			return next(err);
 		else{
@@ -27,7 +27,7 @@ apiRoutes.get('/projects/:projectId',function(req,resp,next){
 });
 */
 
-apiRoutes.post('/projects',function(req,resp,next){
+apiRoutes.post('/projects/add',function(req,resp,next){
 	projects.addProject(req.body.Obj,function(data,err){
 		if(err)
 			return next(err);

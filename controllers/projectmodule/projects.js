@@ -4,19 +4,35 @@ var util=require('util');
 var mongoose=require('mongoose');
 var Projects = mongoose.model('Projects');
 
-exports.getAllProject=function(callback){
+function  GetTotalRecord(){
+
+}
+exports.getAllProject=function(aTableInfo,callback){
+	var perPage = aTableInfo.RPP
+	, page = Math.max(0, aTableInfo.CurPage);
 	Projects.find(function(err,data){
 		if(err)
 			callback(null,err);
 		else {
-			var obj = {
+		var	obj = {
 				status: 'success',
-				count: data.length,
-				data: data
+		    	count: function(){
+				var total=null;
+				Projects.find(function(err,data){
+					if(err)
+						throw err;
+					else {
+						total= data.length
+					}
+				});
+				return total;
+			},
+			    data: data,
+
 			}
 			callback(globalobj.globalObject(obj));
 		}
-	}).sort('ProjectName');
+	}).limit(perPage).skip(perPage * page).sort(aTableInfo.SortBy);
 };
 
 exports.addProject=function(projectdetails,callback){

@@ -67,7 +67,7 @@ issueTrackerApp.registerCtrl('projectdetailcontroller',
              }
 
         console.log($scope.project);
-        appServices.doActionPost({ Token: $rootScope.token, Obj: $scope.project }, 'projects').then(function (d) {
+        appServices.doActionPost({ Token: $rootScope.token, Obj: $scope.project }, 'projects/add').then(function (d) {
             if (d.Status == 'success') {
                  $location.path('/projects');
                 //angular.copy($scope.tempuser, $scope.user); $scope.setEdit(false);

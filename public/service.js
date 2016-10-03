@@ -35,7 +35,8 @@ function appServices($http, $q, $rootScope) {
     }
     function getTable(aTabInfo) {
         NProgress.start(); $rootScope.isBusy += 1;
-        var request = $http({ method: "GET", url: "/api/" + aTabInfo.api, data: aTabInfo });
+        console.log('Table info is ' + JSON.stringify(aTabInfo));
+        var request = $http({ method: "POST", url: "/api/" + aTabInfo.api, data: aTabInfo });
         return (request.then(handleSuccess, handleError));
     }
     function getUserByToken(userToken) {
