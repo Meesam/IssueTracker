@@ -5,30 +5,52 @@
   </h1>
 </section>
 <div class="row">
-<div class="col-xs-12">
+<div class="col-xs-9">
  <div class="box">
    <div class="box-body">
        <div class="row">
-       	 <div class="col-sm-4">
+       	 <div class="col-sm-3">
        	 	Project Title
-       	 	<input type="text" class="form-control" ng-model="project.ProjectTitle"></input>
+       	 	<input type="text" class="form-control" ng-model="project.ProjectName" />
        	 </div>
+		   <div class="col-sm-3">
+			   Start Date
+			   <p class="input-group">
+				   <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="project.StartDate" is-open="popup1.opened" datepicker-options="dateOptions"  close-text="Close" alt-input-formats="altInputFormats" />
+              <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-calendar"></i></button>
+              </span>
+			   </p>
+		   </div>
+		   <div class="col-sm-3">
+			   End Date
+			   <p class="input-group">
+				   <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="project.EndDate" is-open="popup2.opened" datepicker-options="dateOptions"  close-text="Close" alt-input-formats="altInputFormats" />
+              <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="open2()"><i class="glyphicon glyphicon-calendar"></i></button>
+              </span>
+			   </p>
+		   </div>
+		   <div class="col-sm-3">
+			   ProjectType
+			   <input type="text" class="form-control" ng-model="project.ProjectType" />
+		   </div>
        	  <div class="col-sm-6">
        	 	Project Discription
-       	 	<input type="text" class="form-control" ng-model="project.ProjectDescription"></input>
+       	 	<textarea type="text" rows="3" class="form-control" ng-model="project.Description" />
        	 </div>
        </div>
        <div class="row">
        	<div class="col-sm-1">
        		<br />
-       		<input type="button" ng-click="saveproject()" class="btn btn-primary" value="{{btntext}}"></input>
+       		<input type="button" ng-click="saveproject()" class="btn btn-primary" value="{{btntext}}" />
        	</div>
        	<div class="col-sm-1">
        		<br />
-       		<input type="button" ng-click="cancelproject()" class="btn btn-primary" value="Cancel"></input>
+       		<input type="button" ng-click="cancelproject()" class="btn btn-primary" value="Cancel" />
        	</div>
        </div>
-              
+
    </div>
  </div>
 </div>

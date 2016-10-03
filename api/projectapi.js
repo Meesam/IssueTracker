@@ -1,11 +1,12 @@
 var express=require('express');
+var db=require('../core/db');
 var projects=require('../controllers/projectmodule/projects');
 var apiRoutes = express.Router();
 
 
 // Get all project list
 apiRoutes.get('/project',function (req,resp,next) {
-	projects.getAllPoject(function(data,err){
+	projects.getAllProject(function(data,err){
 		if(err)
 			return next(err);
 		else{
@@ -14,6 +15,7 @@ apiRoutes.get('/project',function (req,resp,next) {
 	});
 });
 
+/*
 apiRoutes.get('/projects/:projectId',function(req,resp,next){
 	projects.getProjectById(req.params.projectId,function(data,err){
 		if(err)
@@ -23,6 +25,7 @@ apiRoutes.get('/projects/:projectId',function(req,resp,next){
 		}
 	});
 });
+*/
 
 apiRoutes.post('/projects',function(req,resp,next){
 	projects.addProject(req.body.Obj,function(data,err){

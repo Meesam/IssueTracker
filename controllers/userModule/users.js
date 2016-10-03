@@ -54,17 +54,26 @@ exports.doLogin=function(users,callback){
 		 if(err)
 		  callback(null,err);
 		  else{
-			 var obj={
-				 status:'success',
-				 count:data.length,
-				 data:data,
-				 tokenvalue:data[0].Email
-			 }
+			 console.log("data is " + data.length);
+              if(data.length != 0) {
+				  var obj={
+					  status:'success',
+					  count:data.length,
+					  data:data,
+					  tokenvalue: data[0].Email
+				  }
+			  }
+			 else {
+				  var obj = {
+					  status: 'success',
+					  count: 0,
+					  data: null
+				  }
+			  };
 			 callback(globalobj.globalObject(obj));
 		 }
 	  });
   }
-
 };
 
 

@@ -10,7 +10,7 @@ issueTrackerApp.registerCtrl('projectscontroller',
              $rootScope.setMsg(d.Info);
         });
     }
-    $scope.ProjecTable = getTableObj('ProjectMaster', $rootScope.token, 'ProjectTitle', 'project', $scope.getProject);
+    $scope.ProjecTable = getTableObj('ProjectMaster', $rootScope.token, 'ProjectName', 'project', $scope.getProject);
     $scope.getProject();
 
     $scope.addnew=function(){

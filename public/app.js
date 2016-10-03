@@ -1,4 +1,4 @@
-var issueTrackerApp=angular.module('issueTrackerApp',['ngRoute','ngCookies','cgNotify']);
+var issueTrackerApp=angular.module('issueTrackerApp',['ngRoute','ngCookies','cgNotify','ngSanitize','ui.bootstrap']);
 function getRoute(name) {
     return {
         templateUrl: 'views/' + name + '.html?r=' + FTVer,
@@ -36,7 +36,6 @@ issueTrackerApp.controller('mainCtrl', mainCtrl);
 issueTrackerApp.run(function ($rootScope, $location, $cookies, appServices) {
     var token = $cookies.get('UserToken');
     if (token) $rootScope.token = token;
-    console.log('token is '  + token);
     $rootScope.$on("$routeChangeStart", function (event, next, current) {
         $rootScope.attParam = null;
         if (!navigator.onLine) $rootScope.setMsg('Network not connected! Please check internet connection.');
@@ -116,7 +115,7 @@ function getTableObj(tableid, token, initSort, apipath, refreshTableFunc) {
     itf.SortBy = appStor.gettext(tableid + 'sort', initSort);
     itf.Token = token;
     itf.SortDesc = false;
-    itf.RPP = appStor.getnumber(tableid + 'rpp', 10);;
+    itf.RPP = appStor.getnumber(tableid + 'rpp', 5);;
     itf.TotalRows = 0;
     itf.CurPage = 1;
     itf.NumPages = 1;
@@ -149,8 +148,7 @@ function getTableObj(tableid, token, initSort, apipath, refreshTableFunc) {
     }
     itf.setRows = function (aRes) {
         this.Rows = aRes.objdata;
-        console.log(aRes.objdata);
-        this.TotalRows = aRes.TotalRows;
+        this.TotalRows = aRes.Count;
         this.NumPages = Math.floor((this.TotalRows + this.RPP - 1) / this.RPP);
         if (this.CurPage > this.NumPages) this.CurPage = this.NumPages;
         if (this.CurPage == 0) this.CurPage = 1;

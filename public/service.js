@@ -18,8 +18,6 @@ function appServices($http, $q, $rootScope) {
     function doActionPost(actionParam, path) {
         NProgress.start(); $rootScope.isBusy += 1;
         var request = $http({ method: "post", url: "/api/" + path, data: actionParam });
-        console.log(actionParam);
-        console.log(path);
         return (request.then(handleSuccess, handleError));
     }
     function doActionGet(actionParam, path) {

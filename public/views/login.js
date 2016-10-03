@@ -4,10 +4,10 @@ issueTrackerApp.registerCtrl('logincontroller', function logincontroller($scope,
         if ($scope.loginInfo.UserName == '') { $rootScope.setMsg('UserName is required'); return }
         else if ($scope.loginInfo.Password == '') { $rootScope.setMsg('Password is required'); return }
         appServices.doLogin($scope.loginInfo).then(function (d) {
-            if (d.Status == 'success') { // Login Success
+            if (d.Status == 'success' && d.Count > 0) { // Login Success
                 $rootScope.mUser = d.objdata;
                 $rootScope.token = d.token;
-                console.log($rootScope.token);
+                console.log('Remember is ' +  $scope.loginInfo.Remember);
                 if ($scope.loginInfo.Remember) {
                     var expireDate = new Date();
                     expireDate.setDate(expireDate.getDate() + 90);
