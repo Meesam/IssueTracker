@@ -5,14 +5,13 @@ issueTrackerApp.registerCtrl('projectdetailcontroller',
     $scope.PageHeader=$routeParams.ID=="new"? "Add New Project" : "Edit Project";
     $scope.btntext=$routeParams.ID=="new"?"Save":"Update";
 
-
     $scope.saveproject=function(){
         if ( angular.isUndefined($scope.project.ProjectName) || $scope.project.ProjectName == '') {
               $rootScope.setMsg('Project Name is required');
               return;
              }
         if ( angular.isUndefined($scope.project.Description) || $scope.project.Description == '') {
-              $rootScope.setMsg('Project Description is required'); 
+              $rootScope.setMsg('Project Description is required');
               return;
              }
 
@@ -34,13 +33,13 @@ issueTrackerApp.registerCtrl('projectdetailcontroller',
     $scope.getProject=function(){
         appServices.doActionGet({ Token: $rootScope.token, Obj: $scope.project }, 'projects/' + $routeParams.ID).then(function (d) {
             if (d.Status == 'success') {
-                console.log('start date is ' + $filter('date')(d.objdata[0].StartDate,'dd MMM yyyy'));
-                $scope.project.StartDate=$filter('date')(d.objdata[0].StartDate,'dd MMM yyyy');
-                $scope.project=d.objdata[0];
-                 $scope.PageHeader=$scope.project.ProjectTitle;
-                 $scope.btntext="Update";
+                console.log(d.objdata[0]);
+                $scope.project = d.objdata[0];
+                $scope.PageHeader = $scope.project.ProjectTitle;
+                $scope.btntext = "Update";
+            } else {
+                $rootScope.setMsg(d.Info);
             }
-            else $rootScope.setMsg(d.Info);
         });
     }
    if($routeParams.ID != 'new')

@@ -166,6 +166,13 @@ issueTrackerApp.factory('validationService', function () {
     };
 });
 
+issueTrackerApp.filter('UTC2Local', function () {
+    return function (date) {
+        if (date == null) { return date }
+        return new Date(date + 'Z');
+    };
+});
+
 var appStor = {
     save: function (key, value) { if (typeof (Storage) !== "undefined") { localStorage.setItem(key, value); } },
     gettext: function (key, def) { if (typeof (Storage) !== "undefined") { var val = localStorage.getItem(key); if (val) return val; else return def; } else return def; },

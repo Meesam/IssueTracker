@@ -42,8 +42,8 @@
                     </tr>
                     <tr class="tblborder cp" ng-repeat="p in ProjecTable.Rows" ng-click="Showdetail(p._id)">
                         <td>{{p.ProjectName}}</td>
-                        <td>{{p.StartDate | date:'MMM d, y'}}</td>
-                        <td>{{p.EndDate | date:'MMM d y'}}</td>
+                        <td>{{p.StartDate | date:'dd MMM yyyy'}}</td>
+                        <td>{{p.EndDate | date:'dd MMM yyyy'}}</td>
                         <td>{{p.ProjectType}}</td>
                     </tr>
                 </table>

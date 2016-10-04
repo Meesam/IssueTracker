@@ -32,8 +32,8 @@ exports.getAllProject=function(aTableInfo,callback){
 exports.addProject=function(projectdetails,callback){
   var project=new Projects({
 	  ProjectName : projectdetails.ProjectName,
-	  StartDate : projectdetails.StartDate,
-	  EndDate : projectdetails.EndDate,
+	  StartDate : new Date(projectdetails.StartDate),
+	  EndDate : new Date(projectdetails.EndDate),
 	  ProjectType : projectdetails.ProjectType,
 	  Description : projectdetails.Description
   });
