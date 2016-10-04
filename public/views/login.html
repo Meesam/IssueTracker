@@ -1,19 +1,18 @@
+ <form class="form-signin">
+    <h2 class="form-signin-heading">Please sign in</h2>
+    <label for="inputEmail" class="sr-only">User Name</label>
+    <input type="text" ng-model="loginInfo.UserName" class="form-control" placeholder="User Name" autofocus>
+    <label for="inputPassword" class="sr-only">Password</label>
+    <input type="password" ng-model="loginInfo.Password" class="form-control" placeholder="Password" required>
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" value="remember-me" ng-model="loginInfo.Remember"> Remember me
+      </label>
+    </div>
+    <button class="btn btn-lg btn-primary btn-block" ng-click="doLogin()" type="submit">Sign in</button>
+  </form>
+   <div ng-if="successmsg" class="alert alert-danger">
+       <strong>Error!</strong> {{msg}}
+  </div>
 
-      <form class="form-signin">
-        <h2 class="form-signin-heading">Please sign in</h2>
-        <label for="inputEmail" class="sr-only">User Name</label>
-        <input type="text" ng-model="loginInfo.UserName" class="form-control" placeholder="User Name" autofocus>
-        <label for="inputPassword" class="sr-only">Password</label>
-        <input type="password" ng-model="loginInfo.Password" class="form-control" placeholder="Password" required>
-        <div class="checkbox">
-          <label>
-            <input type="checkbox" value="remember-me" ng-model="loginInfo.Remember"> Remember me
-          </label>
-        </div>
-        <button class="btn btn-lg btn-primary btn-block" ng-click="doLogin()" type="submit">Sign in</button>
-      </form>
-       <div ng-if="successmsg" class="alert alert-danger">
-         <strong>Error!</strong> {{msg}}
-      </div>
-  
 

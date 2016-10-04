@@ -35,7 +35,6 @@ function appServices($http, $q, $rootScope) {
     }
     function getTable(aTabInfo) {
         NProgress.start(); $rootScope.isBusy += 1;
-        console.log('Table info is ' + JSON.stringify(aTabInfo));
         var request = $http({ method: "POST", url: "/api/" + aTabInfo.api, data: aTabInfo });
         return (request.then(handleSuccess, handleError));
     }

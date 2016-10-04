@@ -7,7 +7,7 @@ issueTrackerApp.registerCtrl('issuescontroller',
             	$scope.IssuesTable.setRows(d); 
             }
             else
-             $rootScope.setMsg(d.Info);
+                $rootScope.setMsg(d.Info);
         });
     }
 

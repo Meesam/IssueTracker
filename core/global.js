@@ -1,5 +1,4 @@
 exports.globalObject=function(curObject) {
-	console.log('cus object is ' + JSON.stringify(curObject));
 	var globalObject={};
 	if(curObject==null){
          return null;

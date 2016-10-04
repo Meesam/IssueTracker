@@ -15,7 +15,7 @@ apiRoutes.post('/project',function (req,resp,next) {
 	});
 });
 
-/*
+
 apiRoutes.get('/projects/:projectId',function(req,resp,next){
 	projects.getProjectById(req.params.projectId,function(data,err){
 		if(err)
@@ -25,7 +25,7 @@ apiRoutes.get('/projects/:projectId',function(req,resp,next){
 		}
 	});
 });
-*/
+
 
 apiRoutes.post('/projects/add',function(req,resp,next){
 	projects.addProject(req.body.Obj,function(data,err){

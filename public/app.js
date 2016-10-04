@@ -147,11 +147,9 @@ function getTableObj(tableid, token, initSort, apipath, refreshTableFunc) {
         refreshTableFunc();
     }
     itf.setRows = function (aRes) {
-        console.log(aRes);
         this.Rows = aRes.objdata;
         this.TotalRows = aRes.Count;
         this.NumPages = Math.floor((this.TotalRows + this.RPP - 1) / this.RPP);
-        console.log(this.NumPages);
         if (this.CurPage > this.NumPages) this.CurPage = this.NumPages;
         if (this.CurPage == 0) this.CurPage = 1;
     }

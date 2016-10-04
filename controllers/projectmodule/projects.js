@@ -4,35 +4,29 @@ var util=require('util');
 var mongoose=require('mongoose');
 var Projects = mongoose.model('Projects');
 
-function  GetTotalRecord(){
-
-}
 exports.getAllProject=function(aTableInfo,callback){
+	var totalRecord=null;
 	var perPage = aTableInfo.RPP
-	, page = Math.max(0, aTableInfo.CurPage);
+	 , page = Math.max(0, aTableInfo.CurPage);
+	Projects.count({},function(err,data){
+		if(err)
+		totalRecord=0;
+		else
+			totalRecord=data;
+	})
+
 	Projects.find(function(err,data){
 		if(err)
 			callback(null,err);
 		else {
 		var	obj = {
 				status: 'success',
-		    	count: function(){
-				var total=null;
-				Projects.find(function(err,data){
-					if(err)
-						throw err;
-					else {
-						total= data.length
-					}
-				});
-				return total;
-			},
-			    data: data,
-
+		    	count:totalRecord,
+			    data: data
 			}
 			callback(globalobj.globalObject(obj));
 		}
-	}).limit(perPage).skip(perPage * page).sort(aTableInfo.SortBy);
+	}).skip(perPage * (page-1)).limit(perPage).sort(aTableInfo.SortBy);
 };
 
 exports.addProject=function(projectdetails,callback){
@@ -56,6 +50,25 @@ exports.addProject=function(projectdetails,callback){
 		}
 	});
 };
+
+exports.getProjectById=function(projectId,callback){
+	if(projectId==0)
+		callback(null,err);
+	else{
+		Projects.find({_id:projectId},function(err,data){
+			if(err)
+				callback(null,err);
+			else{
+				var	obj = {
+					status: 'success',
+					count:data.length,
+					data: data
+				}
+				callback(globalobj.globalObject(obj));
+			}
+		})
+	}
+}
 
 
 /*
