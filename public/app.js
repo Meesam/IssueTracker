@@ -75,7 +75,7 @@ function mainCtrl($scope, $location, $rootScope, $cookies, notify, $http, appSer
             $location.path("/signin");
         }
     }
-    
+    // to get module
     $scope.getModules = function () {
         appServices.doActionGet({ Token: $rootScope.token }, 'modules').then(function (d) {
             if (d.Status == 'success'){
@@ -115,7 +115,7 @@ function getTableObj(tableid, token, initSort, apipath, refreshTableFunc) {
     itf.SortBy = appStor.gettext(tableid + 'sort', initSort);
     itf.Token = token;
     itf.SortDesc = false;
-    itf.RPP = appStor.getnumber(tableid + 'rpp', 5);;
+    itf.RPP = appStor.getnumber(tableid + 'rpp', 8);;
     itf.TotalRows = 0;
     itf.CurPage = 1;
     itf.NumPages = 1;

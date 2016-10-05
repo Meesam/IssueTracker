@@ -23,7 +23,7 @@ redisClient.on('error',function(err){
 redisClient.on('connect',function(){
     console.log('Redis server is connect now.');
 })
-redisClient.get("address",function(err,data){
+redisClient.get("city",function(err,data){
   if(err)
    console.log('Error is ' + err);
     else console.log('Result is ' + data);
