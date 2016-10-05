@@ -1,3 +1,5 @@
+
+
 var express=require('express');
 var bodyParser=require('body-parser');
 var appconfig=require('./appconfig');
@@ -10,6 +12,25 @@ var statusapi=require('./api/statusapi');
 var projectapi=require('./api/projectapi');
 var cookieparser=require('cookie-parser');
 var jwt = require('jwt-simple');
+var redis=require('redis');
+var responseTime=require('response-time');
+
+var redisClient=redis.createClient();
+redisClient.on('error',function(err){
+  console.log('Redis error is ' + err);
+});
+
+redisClient.on('connect',function(){
+    console.log('Redis server is connect now.');
+})
+redisClient.get("address",function(err,data){
+  if(err)
+   console.log('Error is ' + err);
+    else console.log('Result is ' + data);
+});
+
+redisClient.setex('Office',60,'Compunnel')
+
 
 // app configuration
 var app=express();

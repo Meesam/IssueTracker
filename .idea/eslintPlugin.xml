@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ESLintProjectComponent">
+    <option name="eslintRcFile" value="node_modules\body-parser\node_modules\qs\.eslintrc" />
+    <option name="builtinRulesPath" value="node_modules\eslint\lib\rules" />
+    <option name="eslintExecutable" value="F:\Meesam\GitIssueTracker\node_modules\.bin\eslint.cmd" />
+    <option name="nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
+    <option name="pluginEnabled" value="true" />
+  </component>
+</project>
