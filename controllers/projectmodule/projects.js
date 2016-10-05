@@ -4,9 +4,6 @@ var util=require('util');
 var mongoose=require('mongoose');
 var Projects = mongoose.model('Projects');
 
-function  GetTotalRecord(){
-
-}
 exports.getAllProject=function(aTableInfo,callback){
 	var perPage = aTableInfo.RPP
 	, page = Math.max(0, aTableInfo.CurPage);
