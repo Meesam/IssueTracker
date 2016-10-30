@@ -1,0 +1,49 @@
+swagger: "2.0"
+info:
+  version: "1.0.0"
+  title: "Issue Tracker Api"
+host: localhost:9000
+basepath: /api
+schemes:
+  - http
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  /api/login:
+    tags:
+    - Users
+    # binds app logic to a route
+    x-swagger-router-controller: userapi
+    post:
+       description: Returns Success if login succeed
+       # used as the method name of the controller
+       operationId: doLogin
+       parameters:
+        - name: usersName
+          in: query
+          required: true
+          type: string
+        - name: userPassword
+          in: query
+          required: true
+          type: string
+       responses:
+        "200":
+          description: Success
+
+  /api/modules:
+    tags:
+    - Modules
+    summary: Modules endpoints
+    # binds app logic to a route
+    x-swagger-router-controller: modulesapi
+    get:
+      description: Returns all modules
+      # used as the method name of the controller
+      operationId: getAllModules
+      responses:
+       "200":
+         description: Success
+

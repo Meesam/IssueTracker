@@ -22,14 +22,16 @@ redisClient.on('error',function(err){
 
 redisClient.on('connect',function(){
     console.log('Redis server is connect now.');
-})
+});
+
+/*
 redisClient.get("city",function(err,data){
   if(err)
    console.log('Error is ' + err);
     else console.log('Result is ' + data);
-});
+});*/
 
-redisClient.setex('Office',60,'Compunnel')
+//redisClient.setex('Office',60,'Compunnel')
 
 
 // app configuration
@@ -38,6 +40,7 @@ var apiRoutes = express.Router();
 
 // use middleware
 app.use(express.static(path.join(__dirname+'/public')));
+app.use(express.static(path.join(__dirname+'/public/swagger_dist')));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(cookieparser());
@@ -66,8 +69,12 @@ app.use('/api', issuetypeapi);
 //status routing middleware
 app.use('/api', statusapi);
 
-app.route('/*').get(function(req, res) { 
+app.route('/').get(function(req, res) {
     return res.sendFile(path.join(__dirname+'/public/index.html')); 
+});
+
+app.route('/swagger').get(function(req, res) {
+    return res.sendFile(path.join(__dirname +'/public/swagger_dist/index.html'));
 });
 
 // this is for run  server on localhost
