@@ -2,8 +2,58 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cb4c9ebb-0729-44e9-8af3-b8b17aa26d5a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/views/dynamictable.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/views/dynamictable.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/swagger_dist/fonts/DroidSans-Bold.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/swagger_dist/fonts/DroidSans.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/swagger_dist/images/collapse.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/swagger_dist/images/expand.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/swagger_dist/images/explorer_icons.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/swagger_dist/images/favicon-16x16.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/swagger_dist/images/favicon-32x32.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/swagger_dist/images/favicon.ico" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/swagger_dist/images/logo_small.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/swagger_dist/images/pet_store_api.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/swagger_dist/images/throbber.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/swagger_dist/images/wordnik_api.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/swagger_dist/css/print.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/swagger_dist/css/reset.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/swagger_dist/css/screen.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/swagger_dist/css/style.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/swagger_dist/css/typography.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/swagger_dist/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/swagger_dist/lang/ca.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/swagger_dist/lang/en.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/swagger_dist/lang/es.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/swagger_dist/lang/fr.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/swagger_dist/lang/geo.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/swagger_dist/lang/it.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/swagger_dist/lang/ja.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/swagger_dist/lang/ko-kr.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/swagger_dist/lang/pl.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/swagger_dist/lang/pt.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/swagger_dist/lang/ru.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/swagger_dist/lang/tr.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/swagger_dist/lang/translator.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/swagger_dist/lang/zh-cn.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/swagger_dist/lib/backbone-min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/swagger_dist/lib/es5-shim.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/swagger_dist/lib/handlebars-4.0.5.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/swagger_dist/lib/highlight.9.1.0.pack.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/swagger_dist/lib/highlight.9.1.0.pack_extended.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/swagger_dist/lib/jquery-1.8.0.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/swagger_dist/lib/jquery.ba-bbq.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/swagger_dist/lib/jquery.slideto.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/swagger_dist/lib/jquery.wiggle.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/swagger_dist/lib/js-yaml.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/swagger_dist/lib/jsoneditor.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/swagger_dist/lib/lodash.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/swagger_dist/lib/marked.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/swagger_dist/lib/object-assign-pollyfill.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/swagger_dist/lib/sanitize-html.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/swagger_dist/lib/swagger-oauth.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/swagger_dist/o2c.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/swagger_dist/swagger-ui.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/swagger_dist/swagger-ui.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/swagger_dist/swagger.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="GitIssueTracker.iws" />
@@ -79,8 +129,8 @@
       <file leaf-file-name="dynamictable.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/views/dynamictable.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="326">
-              <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+            <state relative-caret-position="476">
+              <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
               <folding>
                 <element signature="e#685#842#0" expanded="false" />
                 <element signature="e#879#1206#0" expanded="false" />
@@ -120,6 +170,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Meesam Zaidi &lt;meesam.engineer@gmail.com&gt;" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
@@ -248,24 +303,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GitIssueTracker" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="IssueTracker" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -350,7 +387,7 @@
       <updated>1475122990721</updated>
       <workItem from="1477743596808" duration="13725000" />
       <workItem from="1477812203378" duration="16009000" />
-      <workItem from="1477912137717" duration="4636000" />
+      <workItem from="1477912137717" duration="4841000" />
     </task>
     <task id="LOCAL-00001" summary="Swagger implement">
       <created>1477815310269</created>
@@ -366,11 +403,18 @@
       <option name="project" value="LOCAL" />
       <updated>1477917466070</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="dynamic table added">
+      <created>1477917785038</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1477917785038</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34370000" />
+    <option name="totallyTimeSpent" value="34575000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -824,8 +868,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/views/dynamictable.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
-          <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+        <state relative-caret-position="476">
+          <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
           <folding>
             <element signature="e#685#842#0" expanded="false" />
             <element signature="e#879#1206#0" expanded="false" />
