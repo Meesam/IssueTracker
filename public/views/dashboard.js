@@ -27,7 +27,7 @@ issueTrackerApp.registerCtrl('dashboardcontroller',
              makeCircle(330,140)
          );
 
-         //context.fillText("\uf000", 10, 20);
+         context.fillText("\uf000", 10, 20);
 
          var line, isDown;
 

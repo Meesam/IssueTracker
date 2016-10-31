@@ -59,7 +59,7 @@
         <entry file="file://$PROJECT_DIR$/public/views/dashboard.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="435">
-              <caret line="29" column="46" selection-start-line="29" selection-start-column="46" selection-end-line="29" selection-end-column="46" />
+              <caret line="29" column="9" selection-start-line="29" selection-start-column="9" selection-end-line="29" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -336,7 +336,7 @@
       <updated>1475122990721</updated>
       <workItem from="1477743596808" duration="13725000" />
       <workItem from="1477812203378" duration="16009000" />
-      <workItem from="1477912137717" duration="9061000" />
+      <workItem from="1477912137717" duration="9113000" />
     </task>
     <task id="LOCAL-00001" summary="Swagger implement">
       <created>1477815310269</created>
@@ -373,11 +373,18 @@
       <option name="project" value="LOCAL" />
       <updated>1477917999556</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="dynamic table added">
+      <created>1477924155187</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1477924155187</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38795000" />
+    <option name="totallyTimeSpent" value="38847000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -835,7 +842,7 @@
     <entry file="file://$PROJECT_DIR$/public/views/dashboard.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="435">
-          <caret line="29" column="46" selection-start-line="29" selection-start-column="46" selection-end-line="29" selection-end-column="46" />
+          <caret line="29" column="9" selection-start-line="29" selection-start-column="9" selection-end-line="29" selection-end-column="9" />
           <folding />
         </state>
       </provider>
