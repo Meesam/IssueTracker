@@ -21,12 +21,15 @@ issueTrackerApp.config(function ($routeProvider, $controllerProvider, $locationP
         .when('/myprofile', getRoute('userprofile'))
         .when('/dashboard', getRoute('dashboard'))
         .when('/projects', getRoute('projects'))
-        .when('/issues', getRoute('issues'))
+        .when('/dynamictable', getRoute('dynamictable'))
         .when('/issuetype', getRoute('issuetype'))
         .when('/status', getRoute('status'))
         .when('/users', getRoute('userprofile'))
         .when('/projects/:ID',getRoute('projectdetail'))
         .when('/issue/:ID',getRoute('issuedetail'))
+        .when('/swagger',{
+            redirectTo:'swagger_dist/index.html'
+        })
         .otherwise({ redirectTo: '/notfound' });
    $locationProvider.html5Mode(true);
 });

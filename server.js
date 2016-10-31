@@ -1,5 +1,3 @@
-
-
 var express=require('express');
 var bodyParser=require('body-parser');
 var appconfig=require('./appconfig');
@@ -69,7 +67,7 @@ app.use('/api', issuetypeapi);
 //status routing middleware
 app.use('/api', statusapi);
 
-app.route('/').get(function(req, res) {
+app.route('/*').get(function(req, res) {
     return res.sendFile(path.join(__dirname+'/public/index.html')); 
 });
 
