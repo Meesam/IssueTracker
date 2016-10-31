@@ -3,24 +3,22 @@ issueTrackerApp.registerCtrl('dashboardcontroller',
      $scope.Name="Meesam";
      (function() {
          var canvas = this.__canvas = new fabric.Canvas('c', { selection: false });
-
-
-
+         var context = canvas.getContext('2d');
+         context.font='14px FontAwesome';
          function makeCircle(left ,top) {
              var c = new fabric.Circle({
                  left: left,
                  top: top,
-                 strokeWidth: 5,
+                 strokeWidth: 1,
                  radius: 12,
                  fill: '#fff',
                  stroke: '#666',
+                 fillText:'\uf000',
                  selectable:false
              });
              c.hasControls = c.hasBorders = false;
              return c;
          }
-
-
          canvas.add(
              makeCircle(10,20),
              makeCircle(10,240),
@@ -29,20 +27,24 @@ issueTrackerApp.registerCtrl('dashboardcontroller',
              makeCircle(330,140)
          );
 
+         //context.fillText("\uf000", 10, 20);
+
          var line, isDown;
 
          canvas.on('mouse:down', function(o){
-             isDown = true;
-             var pointer = canvas.getPointer(o.e);
-             var points = [ pointer.x, pointer.y, pointer.x, pointer.y ];
-             line = new fabric.Line(points, {
-                 strokeWidth: 5,
-                 fill: 'red',
-                 stroke: 'red',
-                 originX: 'center',
-                 originY: 'center'
-             });
-             canvas.add(line);
+             if (o.target) {
+                 isDown = true;
+                 var pointer = canvas.getPointer(o.e);
+                 var points = [pointer.x, pointer.y, pointer.x, pointer.y];
+                 line = new fabric.Line(points, {
+                     strokeWidth: 5,
+                     fill: 'red',
+                     stroke: 'red',
+                     originX: 'center',
+                     originY: 'center'
+                 });
+                 canvas.add(line);
+             }
          });
 
          canvas.on('mouse:move', function(o){
@@ -53,7 +55,12 @@ issueTrackerApp.registerCtrl('dashboardcontroller',
          });
 
          canvas.on('mouse:up', function(o){
-             isDown = false;
+             if(o.target) {
+                 isDown = false;
+             }
+             else{
+                 canvas.remove(line);
+             }
          });
      })();
  });
