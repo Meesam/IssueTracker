@@ -1,0 +1,54 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-body">
+
+                        <table class="table table-striped table-bordered">
+                            <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Address</th>
+                                <th>Delete</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr ng-repeat="(pIndex,p) in personalDetails">
+                                    <td>
+                                        <input type="text" class="form-control" ng-model="p.fname" /></td>
+                                    </td>
+                                <td>
+                                <table class="table table-striped table-bordered">
+                                    <tr ng-repeat="n in p.email">
+                                        <td>
+                                            <input type="text" class="form-control" ng-model="n.mail" />
+                                            <input type="button" class="btn btn-primary" ng-click="addMoreEmail(pIndex)" value="Add More">
+                                        </td>
+                                    </tr>
+                                </table>
+                                <td>
+
+                                <table class="table table-striped table-bordered">
+                                    <tr ng-repeat="o in p.addr">
+                                        <td>
+                                            <input type="text" class="form-control" ng-model="o.add" />
+                                            <input type="button" class="btn btn-primary" ng-click="addMoreAddr(pIndex)" value="Add More">
+                                        </td>
+                                    </tr>
+                                </table>
+                                </td>
+                                <td> <input type="button" class="btn btn-primary addnew pull-right" ng-click="removeRow($index)" value="Remove"></td>
+                            </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="form-group">
+                            <input type="submit" class="btn btn-primary addnew pull-right" ng-click="addNew()" value="Add New">
+                        </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
