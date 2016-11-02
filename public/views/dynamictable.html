@@ -16,23 +16,22 @@
                             <tbody>
                             <tr ng-repeat="(pIndex,p) in personalDetails">
                                     <td>
-                                        <input type="text" class="form-control" ng-model="p.fname" /></td>
+                                        <input type="text" class="form-control" ng-model="p.Name[pIndex]" /></td>
                                     </td>
                                 <td>
                                 <table class="table table-striped table-bordered">
-                                    <tr ng-repeat="n in p.email">
+                                    <tr ng-repeat="(nIndex,n) in p.Email">
                                         <td>
-                                            <input type="text" class="form-control" ng-model="n.mail" />
+                                            <input type="text" class="form-control" ng-model="n.Email[nIndex]" />
                                             <input type="button" class="btn btn-primary" ng-click="addMoreEmail(pIndex)" value="Add More">
                                         </td>
                                     </tr>
                                 </table>
                                 <td>
-
                                 <table class="table table-striped table-bordered">
-                                    <tr ng-repeat="o in p.addr">
+                                    <tr ng-repeat="(oIndex,o) in p.Address">
                                         <td>
-                                            <input type="text" class="form-control" ng-model="o.add" />
+                                            <input type="text" class="form-control" ng-model="o.Address[oIndex]" />
                                             <input type="button" class="btn btn-primary" ng-click="addMoreAddr(pIndex)" value="Add More">
                                         </td>
                                     </tr>
@@ -45,6 +44,7 @@
 
                         <div class="form-group">
                             <input type="submit" class="btn btn-primary addnew pull-right" ng-click="addNew()" value="Add New">
+                            <input type="submit" class="btn btn-primary addnew" ng-click="Save()" value="Save">
                         </div>
 
                 </div>

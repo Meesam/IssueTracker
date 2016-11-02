@@ -35,6 +35,7 @@ process.on('SIGINT', function() {
 require('../models/userModel');
 require('../models/appMenuModel');
 require('../models/projectModel');
+require('../models/userDetailModel');
 
 
 /* This method will work with Sql Server

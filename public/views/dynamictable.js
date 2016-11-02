@@ -2,66 +2,78 @@ issueTrackerApp.registerCtrl('dynamictablecontroller',
     function dynamictablecontroller($scope, $rootScope, $http, $location, appServices, $cookies,validationService) {
         $scope.personalDetails = [
             {
-                fname:'meesam',
-                email:[
-                    {mail:'a'},
-                    {mail:'2'},
-                    {mail:'test'}
-                ],
-                addr:[
-                    {add:'Knp'},
-                    {add:'del'}]
+                Name: '',
+                Email: [{}],
+                Address: [{}]
             }
         ];
         var columns = {};
-
         var index = 0;
-
-       // console.log('email is ' + $scope.personalDetails[0].email[0].mail);
-        $scope.addNew = function(personalDetail){
+        $scope.addNew = function () {
             $scope.personalDetails.push({
-                'fname': "",
-                'email': [0],
-                'addr': [0],
+
+                // 'Name': "",
+                'Email': [{}],
+                'Address': [{}]
             });
         };
+        $scope.removeRow = function (idx) {
+            $scope.personalDetails.splice(idx, 1);
+        }
 
-        $scope.remove = function(){
-            var newDataList=[];
-            $scope.selectedAll = false;
-            angular.forEach($scope.personalDetails, function(selected){
-                if(!selected.selected){
-                    newDataList.push(selected);
+        $scope.addMoreEmail = function (idx) {
+            $scope.personalDetails[idx].Email.push({
+                // Email:''
+            });
+        }
+
+        $scope.addMoreAddr = function (idx) {
+            $scope.personalDetails[idx].Address.push({
+                // Address:''
+            });
+        }
+
+        $scope.Save = function () {
+            /*
+            var email = [], addr = [];
+             $scope.dt = {};
+            for (var i = 0; i < $scope.personalDetails.length; i++) {
+                dt = {Name: $scope.personalDetails[i]};
+                for (var j = 0; j < $scope.personalDetails[i].Email.length; j++) {
+                    email.push($scope.personalDetails[i].Email[j] + ',');
                 }
-            });
-            $scope.personalDetails = newDataList;
-        };
+                for (var k = 0; k < $scope.personalDetails[i].Address.length; k++) {
+                    addr.push($scope.personalDetails[i].Address[k] + ',');
+                }
+                $scope.dt.Email = email;
+                $scope.dt.Address = addr;
 
-        $scope.removeRow=function (idx) {
-          $scope.personalDetails.splice(idx,1);
-        }
-        
-        $scope.addMoreEmail=function (idx) {
-            $scope.personalDetails[idx].email.push({
-                mail:''
-            });
-        }
+            }*/
 
-        $scope.addMoreAddr=function (idx) {
-            $scope.personalDetails[idx].addr.push({
-                add:''
-            });
-        }
-
-
-        $scope.checkAll = function () {
-            if (!$scope.selectedAll) {
-                $scope.selectedAll = true;
-            } else {
-                $scope.selectedAll = false;
+            console.log('save data is ' + $scope.personalDetails);
+            var s=$scope.personalDetails;
+            var arr = [];
+            for (var i = 0; i < $scope.personalDetails.length; i++) {
+                arr.push($scope.personalDetails[i].Name);
             }
-            angular.forEach($scope.personalDetails, function(personalDetail) {
-                personalDetail.selected = $scope.selectedAll;
-            });
-        };
+
+            /*
+             $scope.personalDetails=[{
+             Name:'Meesam',
+             Email:['a','b','c'],
+             Address:['Kanpur','Delhi']
+             }];*/
+           // var arrayData = JSON.parse("["+JSON.stringify($scope.personalDetails).replace(/(^\{)|(\}$)|("[^"]*[^\\]":)/g,'')+"]")
+           // var objs = s.map(JSON.stringify);
+            console.log('array is ' + JSON.stringify(arr));
+             appServices.doActionPost({ Token: $rootScope.token, Obj: arrayData }, 'userDetails').then(function (d) {
+             if (d.Status == 'success') $location.path('/projects');
+             else $rootScope.setMsg(d.Info);
+             });
+        }
+
+
+
+
+        
     });

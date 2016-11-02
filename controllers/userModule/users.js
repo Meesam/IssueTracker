@@ -5,7 +5,8 @@ var globalobj=require('../../core/global');
 var util=require('util');
 var mongoose=require('mongoose');
 var Users = mongoose.model('Users');
-
+var UsersDetails=mongoose.model('UsersDetails');
+mongoose.set('debug', true);
 /*
 var Schema=mongoose.Schema;
 mongoose.connect(appconfig.dbUrl);
@@ -75,6 +76,33 @@ exports.doLogin=function(users,callback){
 	  });
   }
 };
+
+// Save User Detalis
+exports.addUserDetails=function (userDetails,callback) {
+
+	console.log('user detsils is ' + JSON.stringify(userDetails));
+
+	for(var i=0;i < userDetails.length;i++){
+		var userDetail=new UsersDetails({
+			Name : userDetails[i].Name,
+			Email: userDetails[i].Email,
+			Address:userDetails[i].Address
+		});
+		userDetail.save(function(err){
+			if(err)
+				callback(null,err);
+			else{
+				var obj={
+					status:'success',
+					count:0,
+					data:'Record add successfully'
+				}
+				callback(globalobj.globalObject(obj));
+			}
+		});
+	}
+
+}
 
 
 // Get User by Email

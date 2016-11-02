@@ -32,4 +32,13 @@ apiRoutes.get('/userfromtoken',function(req,resp,next){
      })
   }
 });
+
+apiRoutes.post('/userDetails',function (req,resp,next) {
+   console.log(req.body.Obj);
+    usersModule.addUserDetails(req.body.Obj,function(data,err){
+     if(err) return next(err);
+     else resp.json(data);
+    });
+})
+
 module.exports = apiRoutes;
